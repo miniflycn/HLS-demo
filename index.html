@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>player</title>
+<link rel="stylesheet" href="./player/mediaelementplayer.css" />
+<style>
+.mejs-controls {
+	display: none !important;
+}
+</style>
+</head>
+<body>
+<video width="640" height="360" id="player1">
+	<source type="application/x-mpegURL" src="/m3u8/index.m3u8">
+</video>
+<script src="http://7.url.cn/edu/jslib/jquery/1.9.1/jquery.min.js"></script> 
+<script src="./player/mediaelement-and-player.js"></script>
+<script>
+var player = new MediaElementPlayer('#player1', {
+	loop: true,
+	clickToPlayPause: false,
+	success: function (media, ele, player) {
+		player.play();
+	}
+});
+</script>
+</body>
+</html>
